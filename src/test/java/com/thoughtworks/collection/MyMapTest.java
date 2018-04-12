@@ -73,7 +73,6 @@ public class MyMapTest {
 
         MyMap myMap = new MyMap(list);
 
-
         Integer[] result = new Integer[]{1, 2, 3, 4, 5};
         List<Integer> resultList = Arrays.asList(result);
 

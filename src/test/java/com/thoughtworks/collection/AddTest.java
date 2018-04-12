@@ -72,6 +72,7 @@ public class AddTest {
         Integer[] array = new Integer[]{1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21};
         List<Integer> arrayList = Arrays.asList(array);
 
+
         Add add = new Add();
 
         Integer[] result = new Integer[]{12, 24, 36, 48, 60, 72, 84, 96, 108, 120};

@@ -4,6 +4,9 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.util.Collections;
 
 public class MyMap {
 
@@ -17,22 +20,41 @@ public class MyMap {
     }
 
     public List<Integer> getTriple() {
-        throw new NotImplementedException();
+        return array.stream()
+                .map(num -> num * 3)
+                .collect(Collectors.toList());
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+        return array.stream()
+                .map(num -> String.valueOf((char)('a' + num - 1)))
+                .collect(Collectors.toList());
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        return array.stream()
+                .map(num ->
+                {
+                    String result = "";
+                    while (num != 0) {
+                        int remain = num%26;
+                        if(remain == 0)remain = 26;
+                        result = String.valueOf((char)('a' + remain - 1)) + result;
+                        num = (num - remain) / 26;
+                    }
+                    return result;
+                })
+                .collect(Collectors.toList());
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+        Collections.sort(array);
+        Collections.reverse(array);
+        return array;
     }
 
     public List<Integer> sortFromSmall() {
-        throw new NotImplementedException();
+        Collections.sort(array);
+        return array;
     }
 }
